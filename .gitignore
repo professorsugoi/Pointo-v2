@@ -1,1 +1,6 @@
+# modules
 node_modules
+
+# configs
+config.json
+credentials.json
