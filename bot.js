@@ -1,7 +1,7 @@
 require('module-alias/register');
 
 const colors = require('colors');
-const fs = require('fs');
+const { recursiveReadDirSync } = require('@helpers/Utils');
 const { google } = require('googleapis');
 const { Client, Collection, Intents } = require('discord.js');
 const { loadEvents } = require('@handlers/loadEvents');
@@ -33,7 +33,7 @@ const sheetClient = auth.getClient();
 const googleSheets = google.sheets({ version: 'v4', auth: sheetClient });
 
 // google sheets
-client.sheetCommands = fs.readdirSync('./src/commands/');
+client.sheetCommands = recursiveReadDirSync('src/commands');
 client.slash = new Collection();
 client.auth = auth;
 client.sheetId = process.env.SPREADSHEETID;
