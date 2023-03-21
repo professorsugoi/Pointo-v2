@@ -4,5 +4,8 @@ node_modules
 # configs
 jsons
 config.json
+config.js
 credentials.json
+credentials.js
 .eslintrc.json
+google.md
